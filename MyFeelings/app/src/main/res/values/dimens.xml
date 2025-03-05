@@ -2,5 +2,7 @@
 <resources>
     <dimen name="graphWith">10dp</dimen>
     <dimen name="graphBackground">15dp</dimen>
+    <dimen name="graph_width">200dp</dimen>
+    <dimen name="graph_height">200dp</dimen>
 
 </resources>

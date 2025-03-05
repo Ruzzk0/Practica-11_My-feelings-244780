@@ -1,15 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Gráfica Circular -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/graph"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <!-- Ícono -->
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_neutral"/>
+
+            <!-- Pregunta -->
+            <TextView
+                android:id="@+id/Question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Cómo te sientes hoy?"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <!-- Opciones de emociones -->
+            <LinearLayout
+                android:id="@+id/options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/verySadButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_sad"/>
+
+                <ImageButton
+                    android:id="@+id/sadButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_sad"/>
+
+                <ImageButton
+                    android:id="@+id/neutralButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_neutral"/>
+
+                <ImageButton
+                    android:id="@+id/happyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_happy"/>
+
+                <ImageButton
+                    android:id="@+id/veryHappyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_veryhappy"/>
+            </LinearLayout>
+
+            <!-- Botón de guardar -->
+            <Button
+                android:id="@+id/guardarButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:layout_gravity="center"/>
+
+            <!-- Gráfica de barras -->
+            <GridLayout
+                android:id="@+id/bargraphs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2">
+
+                <TextView android:text="Muy Feliz"/>
+                <View android:id="@+id/graphVeryHappy"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="@color/mustard"/>
+
+                <TextView android:text="Feliz"/>
+                <View android:id="@+id/graphHappy"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="@color/orange"/>
+
+                <TextView android:text="Neutral"/>
+                <View android:id="@+id/graphNeutral"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="@color/greenie"/>
+
+                <TextView android:text="Triste"/>
+                <View android:id="@+id/graphSad"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="@color/blue"/>
+
+                <TextView android:text="Muy Triste"/>
+                <View android:id="@+id/graphVerySad"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="@color/deepBlue"/>
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
